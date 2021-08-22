@@ -22,6 +22,7 @@ new ScrollMagic.Scene({
    duration: '350%',
    triggerHook: 0,
 })
+.setClassToggle('nav', '.in-body')
 .setTween(headerTextTween)
 .setPin('main>header')
 // .addIndicators({name: 'Headers'})
@@ -76,26 +77,6 @@ new ScrollMagic.Scene({
 // .addIndicators({name: 'background mountain'})
 .addTo(controller)
 
-
-// asdasdasd
-
-const sectionLorem = document.querySelector('.lorems')
-const nav = document.querySelector('nav')
-const navHeight = nav.scrollHeight
-
-const onScroll = () => {
-
-   let sectionLoremTopPos = sectionLorem.getBoundingClientRect().top - navHeight
-
-   sectionLoremTopPos < 0
-      ? nav.classList.add('in-section')
-      : nav.classList.remove('in-section')
-
-   window.requestAnimationFrame(onScroll)
-}
-
-window.requestAnimationFrame(onScroll)
-
 // kanchenjung
 
 let kanchenjungTxtTween = new TimelineMax().from('.kanchenjung-txt', {
@@ -109,7 +90,7 @@ new ScrollMagic.Scene({
    triggerHook: 0,
 })
 .setTween(kanchenjungTxtTween)
-.addIndicators({name: 'kanchenjung-txt'})
+// .addIndicators({name: 'kanchenjung-txt'})
 .addTo(controller)
 
 let kanchenjungMtBgTween = new TimelineMax().from('.kanchenjung-img-background', {
@@ -123,7 +104,7 @@ new ScrollMagic.Scene({
 })
 .setTween(kanchenjungMtBgTween)
 // .setPin('.kanchenjung')
-.addIndicators({name: 'kanchenjung-img-background'})
+// .addIndicators({name: 'kanchenjung-img-background'})
 .addTo(controller)
 
 let kanchenjungMtTween = new TimelineMax().from('.kanchenjung-img-mountain', {
@@ -138,6 +119,40 @@ new ScrollMagic.Scene({
 })
 .setTween(kanchenjungMtTween)
 .setPin('.kanchenjung')
-.addIndicators({name: 'kanchenjung-img-mountain'})
+// .addIndicators({name: 'kanchenjung-img-mountain'})
 .addTo(controller)
+
+
+
+// asdasdasd
+
+const sectionLoremEverest = document.querySelector('.lorem-everest')
+const sectionLoremKanchenjung = document.querySelector('.lorem-kanchenjung')
+const sectionKanchenjung = document.querySelector('.kanchenjung')
+const nav = document.querySelector('nav')
+const navHeight = nav.scrollHeight
+
+// lorem everest
+
+const onScroll = () => {
+
+   let top = sectionLoremEverest.getBoundingClientRect().top - navHeight
+   let top2 = sectionKanchenjung.getBoundingClientRect().top - navHeight
+   let top3 = sectionLoremKanchenjung.getBoundingClientRect().top - navHeight
+
+   if(top > 0) nav.classList.remove('in-section')
+   
+   if(top < 0) nav.classList.add('in-section')
+
+   if(top2 < 0) nav.classList.remove('in-section')
+
+   if(top3 < 0) nav.classList.add('in-section')
+
+   window.requestAnimationFrame(onScroll)
+}
+
+window.requestAnimationFrame(onScroll)
+
+
+
 
