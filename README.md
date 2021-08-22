@@ -4,3 +4,7 @@ Built with:
 - CSS 
 - JAVASCRIPT
 - ScrollMagic + GSAP
+
+# live preview 
+
+https://minibrusp.github.io/everest-parallax-prac/
