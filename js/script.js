@@ -63,8 +63,8 @@ new ScrollMagic.Scene({
 let mountainBgTween = new TimelineMax().fromTo('.header-background', {
    scale: 1,
 }, {
-   scale: 1.2,
-   y: 50,
+   scale: 1.1,
+   y: 20,
 })
 
 new ScrollMagic.Scene({
@@ -83,21 +83,61 @@ const sectionLorem = document.querySelector('.lorems')
 const nav = document.querySelector('nav')
 const navHeight = nav.scrollHeight
 
-
-
 const onScroll = () => {
 
    let sectionLoremTopPos = sectionLorem.getBoundingClientRect().top - navHeight
-
-   console.log(sectionLoremTopPos);
 
    sectionLoremTopPos < 0
       ? nav.classList.add('in-section')
       : nav.classList.remove('in-section')
 
-
-
    window.requestAnimationFrame(onScroll)
 }
 
 window.requestAnimationFrame(onScroll)
+
+// kanchenjung
+
+let kanchenjungTxtTween = new TimelineMax().from('.kanchenjung-txt', {
+   y: 400,
+   opacity: 0,
+})
+
+new ScrollMagic.Scene({
+   triggerElement: '.kanchenjung',
+   duration: '100%',
+   triggerHook: 0,
+})
+.setTween(kanchenjungTxtTween)
+.addIndicators({name: 'kanchenjung-txt'})
+.addTo(controller)
+
+let kanchenjungMtBgTween = new TimelineMax().from('.kanchenjung-img-background', {
+   x: -5,
+})
+
+new ScrollMagic.Scene({
+   triggerElement: '.kanchenjung',
+   duration: '200%',
+   triggerHook: 0,
+})
+.setTween(kanchenjungMtBgTween)
+// .setPin('.kanchenjung')
+.addIndicators({name: 'kanchenjung-img-background'})
+.addTo(controller)
+
+let kanchenjungMtTween = new TimelineMax().from('.kanchenjung-img-mountain', {
+   scale: 1.01,
+   x: -10,
+})
+
+new ScrollMagic.Scene({
+   triggerElement: '.kanchenjung',
+   duration: '200%',
+   triggerHook: 0,
+})
+.setTween(kanchenjungMtTween)
+.setPin('.kanchenjung')
+.addIndicators({name: 'kanchenjung-img-mountain'})
+.addTo(controller)
+
