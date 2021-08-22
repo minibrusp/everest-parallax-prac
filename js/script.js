@@ -24,7 +24,7 @@ new ScrollMagic.Scene({
 })
 .setTween(headerTextTween)
 .setPin('main>header')
-.addIndicators({name: 'Headers'})
+// .addIndicators({name: 'Headers'})
 .addTo(controller)
 
 let articleHeaderTxtTween = new TimelineMax().from('.header-title', {
@@ -40,7 +40,7 @@ new ScrollMagic.Scene({
 })
 .setTween(articleHeaderTxtTween)
 .setPin('article')
-.addIndicators({name: 'header title'})
+// .addIndicators({name: 'header title'})
 .addTo(controller)
 
 let mountainTween = new TimelineMax().fromTo('.header-mountain', {
@@ -57,7 +57,7 @@ new ScrollMagic.Scene({
    triggerHook: 0,
 })
 .setTween(mountainTween)
-.addIndicators({name: 'header mountain'})
+// .addIndicators({name: 'header mountain'})
 .addTo(controller)
 
 let mountainBgTween = new TimelineMax().fromTo('.header-background', {
@@ -73,7 +73,7 @@ new ScrollMagic.Scene({
    triggerHook: 0,
 })
 .setTween(mountainBgTween)
-.addIndicators({name: 'background mountain'})
+// .addIndicators({name: 'background mountain'})
 .addTo(controller)
 
 
