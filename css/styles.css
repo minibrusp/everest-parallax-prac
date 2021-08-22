@@ -205,7 +205,8 @@ main header {
 
 .header-title h2 {
    font-size: 5rem;
-   letter-spacing: 5px;
+   letter-spacing: 0px;
+   text-transform: uppercase;
 }
 
 .header-title p {
