@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', event => {
    .addTo(controller)
 
    let choOyuBGTween = new TimelineMax().from('.choOyu-img-background', {
-      x: 12,
+      x: 15,
    })
 
    new ScrollMagic.Scene({
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', event => {
    .addTo(controller)
 
    let choOyuMTTween = new TimelineMax().from('.choOyu-img-mountain', {
-      x: 8,
+      x: 5,
    })
 
    new ScrollMagic.Scene({
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', event => {
    .addTo(controller)
 
    let choOyuLandTween = new TimelineMax().from('.choOyu-img-land', {
-      x: -5,
+      x: -10,
    })
 
    new ScrollMagic.Scene({
