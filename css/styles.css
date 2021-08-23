@@ -244,6 +244,11 @@ section.lorems {
    background-color: rgb(86, 78, 66);
 }
 
+.lorem-choOyu {
+   background-color: rgb(212, 211, 209);
+   color: rgb(73, 92, 108);
+}
+
 /* section kanchenjung  */
 
 .kanchenjung {
@@ -430,7 +435,7 @@ section.lorems {
    position: absolute;
    bottom: 0;
    left: 0;
-   z-index: 20;
+   z-index: 19;
 }
 
 .makalu-txt {
@@ -444,7 +449,7 @@ section.lorems {
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   z-index: 19;
+   z-index: 18;
    text-shadow: 2px 2px 2px black, -2px -2px 15px black;
 }
 
@@ -455,5 +460,81 @@ section.lorems {
 }
 
 .makalu-txt p {
+   font-size: 1.7rem;
+}
+
+/* section choOyu */
+
+.choOyu {
+   position: relative;
+}
+
+.choOyu-img {
+   height: 100vh;
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   padding: 0 5vw;
+   overflow: hidden;
+   position: relative;
+}
+
+.choOyu-img-background {
+   background-image: url(../assets/ChoOyu-background.png);
+   background-size: cover;
+   background-position: top;
+   height: 100%;
+   width: 105%;
+   position: absolute;
+   bottom: 0;
+   left: -10px;
+}
+
+.choOyu-img-mountain {
+   background-image: url(../assets/ChoOyu-mountain.png);
+   background-position: top;
+   background-size: cover;
+   height: 100%;
+   width: 105%;
+   position: absolute;
+   bottom: 0;
+   left: -10px;
+   z-index: 15;
+}
+
+.choOyu-img-land {
+   background-image: url(../assets/ChoOyu-land.png);
+   background-position: top;
+   background-size: cover;
+   height: 100%;
+   width: 105%;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   z-index: 19;
+}
+
+.choOyu-txt {
+   text-align: center;
+   position: absolute;
+   top: -5rem;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   z-index: 18;
+   text-shadow: 2px 2px 2px black, -2px -2px 15px black;
+}
+
+.choOyu-txt h2 {
+   font-size: 5rem;
+   letter-spacing: 0px;
+   text-transform: uppercase;
+}
+
+.choOyu-txt p {
    font-size: 1.7rem;
 }

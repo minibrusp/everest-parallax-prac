@@ -2,19 +2,8 @@ document.addEventListener('DOMContentLoaded', event => {
 
    let controller = new ScrollMagic.Controller()
 
-   let headerTextTween = new TimelineMax().from('header .header-text', {
+   let headerTextTween = new TimelineMax().to('header .header-text', {
       x: '100%',
-      opacity: 0,
-   })
-   .to('header .header-text', {
-      opacity: 1
-   })
-   .to('header .header-text', {
-      x: '-100%',
-      opacity: 0
-   })
-   .to('header .header-text', {
-      x: '-100%',
       opacity: 0
    })
 
@@ -24,9 +13,8 @@ document.addEventListener('DOMContentLoaded', event => {
       duration: '350%',
       triggerHook: 0,
    })
-   .setClassToggle('nav', '.in-body')
    .setTween(headerTextTween)
-   .setPin('main>header')
+   // .setPin('main>header')
    // .addIndicators({name: 'Headers'})
    .addTo(controller)
 
@@ -50,8 +38,8 @@ document.addEventListener('DOMContentLoaded', event => {
       scale: 1,
       y: 0,
    }, {
-      scaleY: 1.001,
-      y: -1
+      scale: 1.005,
+      y: -2
    })
 
    new ScrollMagic.Scene({
@@ -63,16 +51,14 @@ document.addEventListener('DOMContentLoaded', event => {
    // .addIndicators({name: 'header mountain'})
    .addTo(controller)
 
-   let mountainBgTween = new TimelineMax().fromTo('.header-background', {
-      scale: 1,
-   }, {
-      scale: 1.1,
-      y: 20,
+   let mountainBgTween = new TimelineMax().from('.header-background', {
+      scale: 1.02,
+      y: 2,
    })
 
    new ScrollMagic.Scene({
       triggerElement: 'main header',
-      duration: '600%',
+      duration: '500%',
       triggerHook: 0,
    })
    .setTween(mountainBgTween)
@@ -102,7 +88,7 @@ document.addEventListener('DOMContentLoaded', event => {
 
    new ScrollMagic.Scene({
       triggerElement: '.kanchenjung',
-      duration: '400%',
+      duration: '800%',
       triggerHook: 0,
    })
    .setTween(kanchenjungMtBgTween)
@@ -117,7 +103,7 @@ document.addEventListener('DOMContentLoaded', event => {
 
    new ScrollMagic.Scene({
       triggerElement: '.kanchenjung',
-      duration: '400%',
+      duration: '800%',
       triggerHook: 0,
    })
    .setTween(kanchenjungMtTween)
@@ -147,7 +133,7 @@ document.addEventListener('DOMContentLoaded', event => {
 
    new ScrollMagic.Scene({
       triggerElement: '.lhotse',
-      duration: '400%',
+      duration: '700%',
       triggerHook: 0
    })
    .setTween(lhotseBgTween)
@@ -160,7 +146,7 @@ document.addEventListener('DOMContentLoaded', event => {
 
    new ScrollMagic.Scene({
       triggerElement: '.lhotse',
-      duration: '400%',
+      duration: '700%',
       triggerHook: 0
    })
    .setTween(lhotseMtTween)
@@ -174,7 +160,7 @@ document.addEventListener('DOMContentLoaded', event => {
 
    new ScrollMagic.Scene({
       triggerElement: '.lhotse',
-      duration: '400%',
+      duration: '700%',
       triggerHook: 0
    })
    .setTween(lhotseLandTween)
@@ -207,7 +193,7 @@ document.addEventListener('DOMContentLoaded', event => {
 
    new ScrollMagic.Scene({
       triggerElement: '.makalu',
-      duration: '400%',
+      duration: '800%',
       triggerHook: 0,
    })
    .setTween(makaluBGTween)
@@ -221,7 +207,7 @@ document.addEventListener('DOMContentLoaded', event => {
 
    new ScrollMagic.Scene({
       triggerElement: '.makalu',
-      duration: '400%',
+      duration: '800%',
       triggerHook: 0,
    })
    .setTween(makaluMtTween)
@@ -236,11 +222,66 @@ document.addEventListener('DOMContentLoaded', event => {
 
    new ScrollMagic.Scene({
       triggerElement: '.makalu',
-      duration: '400%',
+      duration: '800%',
       triggerHook: 0,
    })
    .setTween(makaluLandTween)
    .setPin('.makalu')
+   .addTo(controller)
+
+   // choOyu 
+
+   let choOyuTxtTween = new TimelineMax().from('.choOyu-txt', {
+      x: 400,
+      y: 200,
+      scale: 0.5,
+      rotate: 90,
+      opacity: 0,
+   })
+
+   new ScrollMagic.Scene({
+      triggerElement: '.choOyu',
+      duration: '400%',
+      triggerHook: 0,
+   })
+   .setTween(choOyuTxtTween)
+   .addTo(controller)
+
+   let choOyuBGTween = new TimelineMax().from('.choOyu-img-background', {
+      x: 12,
+   })
+
+   new ScrollMagic.Scene({
+      triggerElement: '.choOyu',
+      duration: '800%',
+      triggerHook: 0,
+   })
+   .setTween(choOyuBGTween)
+   .addTo(controller)
+
+   let choOyuMTTween = new TimelineMax().from('.choOyu-img-mountain', {
+      x: 8,
+   })
+
+   new ScrollMagic.Scene({
+      triggerElement: '.choOyu',
+      duration: '800%',
+      triggerHook: 0,
+   })
+   .setTween(choOyuMTTween)
+   .addTo(controller)
+
+   let choOyuLandTween = new TimelineMax().from('.choOyu-img-land', {
+      x: -5,
+   })
+
+   new ScrollMagic.Scene({
+      triggerElement: '.choOyu',
+      duration: '800%',
+      triggerHook: 0,
+   })
+   .setTween(choOyuLandTween)
+   .setPin('.choOyu')
    .addTo(controller)
 
 
@@ -254,6 +295,8 @@ document.addEventListener('DOMContentLoaded', event => {
    const sectionLoremLhotse = document.querySelector('.lorem-lhotse')
    const sectionMakalu = document.querySelector('.makalu')
    const sectionLoremMakalu = document.querySelector('.lorem-makalu')
+   const sectionChoOyu = document.querySelector('.choOyu')
+   const sectionLoremChoOyu = document.querySelector('.lorem-choOyu')
    const nav = document.querySelector('nav')
    const navHeight = nav.scrollHeight
 
@@ -266,22 +309,29 @@ document.addEventListener('DOMContentLoaded', event => {
       let top5 = sectionLoremLhotse.getBoundingClientRect().top - navHeight
       let top6 = sectionMakalu.getBoundingClientRect().top - navHeight
       let top7 = sectionLoremMakalu.getBoundingClientRect().top - navHeight
+      let top8 = sectionChoOyu.getBoundingClientRect().top - navHeight
+      let top9 = sectionLoremChoOyu.getBoundingClientRect().top - navHeight
 
-      if(top > 0) nav.classList.remove('in-section')
-      
-      if(top < 0) nav.classList.add('in-section')
+      let tops = [top, top2, top3, top4, top5, top6, top7, top8, top9]
 
-      if(top2 < 0) nav.classList.remove('in-section')
+      tops.forEach(top => {
+         let index = tops.indexOf(top)
 
-      if(top3 < 0) nav.classList.add('in-section')
+         if(index === 0) {
+            top > 0 
+               ? nav.classList.remove('in-section')
+               : nav.classList.add('in-section')
 
-      if(top4 < 0) nav.classList.remove('in-section')
+               return
+         }
 
-      if(top5 < 0) nav.classList.add('in-section')
+         if(top < 0) {
+            index % 2 === 0 
+            ? nav.classList.add('in-section')
+            : nav.classList.remove('in-section')
+         }
 
-      if(top6 < 0) nav.classList.remove('in-section')
-
-      if(top7 < 0) nav.classList.add('in-section')
+      })
 
       window.requestAnimationFrame(onScroll)
    }
