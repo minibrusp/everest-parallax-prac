@@ -1,6 +1,14 @@
 document.addEventListener('DOMContentLoaded', event => {
 
+   const nav = document.querySelector('nav')
+
    const controller = new ScrollMagic.Controller()
+
+   const navInHero = result => {
+      console.log(result);
+      result ? console.log('YES') : console.log('NO');
+      result ? nav.classList.remove('in-section') : nav.classList.add('in-section')
+   }
 
    const EverestTimeline = gsap.timeline()
 
@@ -25,6 +33,12 @@ document.addEventListener('DOMContentLoaded', event => {
          scale: 1.02,
          y: 2,
          duration: 4,
+         onStart: navInHero,
+         onStartParams: [true],
+         onUpdate: navInHero,
+         onUpdateParams: [true],
+         onComplete: navInHero,
+         onCompleteParams: [false],
       }, 0)
 
    new ScrollMagic.Scene({
@@ -53,11 +67,19 @@ document.addEventListener('DOMContentLoaded', event => {
          scale: 1.01,
          x: -10,
          duration: 3,
+         onStart: navInHero,
+         onStartParams: [true],
+         onUpdate: navInHero,
+         onUpdateParams: [true],
+         onComplete: navInHero,
+         onCompleteParams: [false],
+         onReverseComplete: navInHero,
+         onReverseCompleteParams: [false],
       }, 0)
 
    new ScrollMagic.Scene({
       triggerElement: '.kanchenjung',
-      duration: '800%',
+      duration: '400%',
       triggerHook: 0,
    })
    .setTween(kanchenjungTimeline)
@@ -86,12 +108,20 @@ document.addEventListener('DOMContentLoaded', event => {
       .from('.lhotse-img-land', {
          scale: 1.005,
          y: -5,
-         duration: 4
+         duration: 4,
+         onStart: navInHero,
+         onStartParams: [true],
+         onUpdate: navInHero,
+         onUpdateParams: [true],
+         onComplete: navInHero,
+         onCompleteParams: [false],
+         onReverseComplete: navInHero,
+         onReverseCompleteParams: [false],
       }, 0)
 
    new ScrollMagic.Scene({
       triggerElement: '.lhotse',
-      duration: '700%',
+      duration: '400%',
       triggerHook: 0
    })
    .setTween(lhotseTimeline)
@@ -123,11 +153,19 @@ document.addEventListener('DOMContentLoaded', event => {
          x: -10,
          scale: 0.99999,
          duration: 4,
+         onStart: navInHero,
+         onStartParams: [true],
+         onUpdate: navInHero,
+         onUpdateParams: [true],
+         onComplete: navInHero,
+         onCompleteParams: [false],
+         onReverseComplete: navInHero,
+         onReverseCompleteParams: [false],
       }, 0)
 
    new ScrollMagic.Scene({
       triggerElement: '.makalu',
-      duration: '800%',
+      duration: '400%',
       triggerHook: 0,
    })
    .setTween(makaluTimeline)
@@ -157,6 +195,14 @@ document.addEventListener('DOMContentLoaded', event => {
       .from('.choOyu-img-land', {
          x: -10,
          duration: 4,
+         onStart: navInHero,
+         onStartParams: [true],
+         onUpdate: navInHero,
+         onUpdateParams: [true],
+         onComplete: navInHero,
+         onCompleteParams: [false],
+         onReverseComplete: navInHero,
+         onReverseCompleteParams: [false],
       }, 0)
 
    new ScrollMagic.Scene({
@@ -167,61 +213,6 @@ document.addEventListener('DOMContentLoaded', event => {
    .setTween(choOyuTimeline)
    .setPin('.choOyu')
    .addTo(controller)
-
-
-
-   // asdasdasd
-
-   const sectionLoremEverest = document.querySelector('.lorem-everest')
-   const sectionKanchenjung = document.querySelector('.kanchenjung')
-   const sectionLoremKanchenjung = document.querySelector('.lorem-kanchenjung')
-   const sectionLhotse = document.querySelector('.lhotse')
-   const sectionLoremLhotse = document.querySelector('.lorem-lhotse')
-   const sectionMakalu = document.querySelector('.makalu')
-   const sectionLoremMakalu = document.querySelector('.lorem-makalu')
-   const sectionChoOyu = document.querySelector('.choOyu')
-   const sectionLoremChoOyu = document.querySelector('.lorem-choOyu')
-   const nav = document.querySelector('nav')
-   const navHeight = nav.scrollHeight
-
-   const onScroll = () => {
-
-      let top = sectionLoremEverest.getBoundingClientRect().top - navHeight
-      let top2 = sectionKanchenjung.getBoundingClientRect().top - navHeight
-      let top3 = sectionLoremKanchenjung.getBoundingClientRect().top - navHeight
-      let top4 = sectionLhotse.getBoundingClientRect().top - navHeight
-      let top5 = sectionLoremLhotse.getBoundingClientRect().top - navHeight
-      let top6 = sectionMakalu.getBoundingClientRect().top - navHeight
-      let top7 = sectionLoremMakalu.getBoundingClientRect().top - navHeight
-      let top8 = sectionChoOyu.getBoundingClientRect().top - navHeight
-      let top9 = sectionLoremChoOyu.getBoundingClientRect().top - navHeight
-
-      let tops = [top, top2, top3, top4, top5, top6, top7, top8, top9]
-
-      tops.forEach(top => {
-         let index = tops.indexOf(top)
-
-         if(index === 0) {
-            top > 0 
-               ? nav.classList.remove('in-section')
-               : nav.classList.add('in-section')
-
-               return
-         }
-
-         if(top < 0) {
-            index % 2 === 0 
-            ? nav.classList.add('in-section')
-            : nav.classList.remove('in-section')
-         }
-
-      })
-
-      window.requestAnimationFrame(onScroll)
-   }
-
-   window.requestAnimationFrame(onScroll)
-
 
 })
 
