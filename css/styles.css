@@ -1,5 +1,12 @@
-@import url('http://fonts.cdnfonts.com/css/bebas-kai?styles=17152');
-@import url('http://fonts.cdnfonts.com/css/avenir-lt-std');
+@font-face {
+   font-family: 'Bebas Kai';
+   src: url(../assets/BebasKai.otf);
+}
+
+@font-face {
+   font-family: 'Avenir LT Std';
+   src: url(../assets/avenir-lt-std-35-light.otf);
+}
 
 :root {
    --white: #EDEDF5;

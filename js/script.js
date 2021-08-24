@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', event => {
    const controller = new ScrollMagic.Controller()
 
    const navInHero = result => {
-      console.log(result);
-      result ? console.log('YES') : console.log('NO');
       result ? nav.classList.remove('in-section') : nav.classList.add('in-section')
    }
 
