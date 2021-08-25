@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', event => {
 
+   'use strict';
+
    const nav = document.querySelector('nav')
 
    const controller = new ScrollMagic.Controller()
@@ -8,7 +10,14 @@ document.addEventListener('DOMContentLoaded', event => {
       result ? nav.classList.remove('in-section') : nav.classList.add('in-section')
    }
 
-   const EverestTimeline = gsap.timeline()
+   const EverestTimeline = gsap.timeline({
+      onStart: navInHero,
+      onStartParams: [true],
+      onUpdate: navInHero,
+      onUpdateParams: [true],
+      onComplete: navInHero,
+      onCompleteParams: [false],
+   })
 
    EverestTimeline
       .to('header .header-text', {
@@ -31,12 +40,6 @@ document.addEventListener('DOMContentLoaded', event => {
          scale: 1.02,
          y: 2,
          duration: 4,
-         onStart: navInHero,
-         onStartParams: [true],
-         onUpdate: navInHero,
-         onUpdateParams: [true],
-         onComplete: navInHero,
-         onCompleteParams: [false],
       }, 0)
 
    new ScrollMagic.Scene({
@@ -50,7 +53,16 @@ document.addEventListener('DOMContentLoaded', event => {
 
    // kanchenjung
 
-   const kanchenjungTimeline = gsap.timeline()
+   const kanchenjungTimeline = gsap.timeline({
+      onStart: navInHero,
+      onStartParams: [true],
+      onUpdate: navInHero,
+      onUpdateParams: [true],
+      onComplete: navInHero,
+      onCompleteParams: [false],
+      onReverseComplete: navInHero,
+      onReverseCompleteParams: [false],
+   })
 
    kanchenjungTimeline
       .from('.kanchenjung-txt', {
@@ -65,14 +77,6 @@ document.addEventListener('DOMContentLoaded', event => {
          scale: 1.01,
          x: -10,
          duration: 3,
-         onStart: navInHero,
-         onStartParams: [true],
-         onUpdate: navInHero,
-         onUpdateParams: [true],
-         onComplete: navInHero,
-         onCompleteParams: [false],
-         onReverseComplete: navInHero,
-         onReverseCompleteParams: [false],
       }, 0)
 
    new ScrollMagic.Scene({
@@ -86,7 +90,16 @@ document.addEventListener('DOMContentLoaded', event => {
 
    // lhotse 
 
-   const lhotseTimeline = gsap.timeline()
+   const lhotseTimeline = gsap.timeline({
+      onStart: navInHero,
+      onStartParams: [true],
+      onUpdate: navInHero,
+      onUpdateParams: [true],
+      onComplete: navInHero,
+      onCompleteParams: [false],
+      onReverseComplete: navInHero,
+      onReverseCompleteParams: [false],
+   })
 
    lhotseTimeline
       .from('.lhotse-txt', {
@@ -107,14 +120,6 @@ document.addEventListener('DOMContentLoaded', event => {
          scale: 1.005,
          y: -5,
          duration: 4,
-         onStart: navInHero,
-         onStartParams: [true],
-         onUpdate: navInHero,
-         onUpdateParams: [true],
-         onComplete: navInHero,
-         onCompleteParams: [false],
-         onReverseComplete: navInHero,
-         onReverseCompleteParams: [false],
       }, 0)
 
    new ScrollMagic.Scene({
@@ -128,7 +133,16 @@ document.addEventListener('DOMContentLoaded', event => {
 
    // makalu 
 
-   const makaluTimeline = gsap.timeline()
+   const makaluTimeline = gsap.timeline({
+      onStart: navInHero,
+      onStartParams: [true],
+      onUpdate: navInHero,
+      onUpdateParams: [true],
+      onComplete: navInHero,
+      onCompleteParams: [false],
+      onReverseComplete: navInHero,
+      onReverseCompleteParams: [false],
+   })
 
    makaluTimeline
       .from('.makalu-txt', {
@@ -151,14 +165,6 @@ document.addEventListener('DOMContentLoaded', event => {
          x: -10,
          scale: 0.99999,
          duration: 4,
-         onStart: navInHero,
-         onStartParams: [true],
-         onUpdate: navInHero,
-         onUpdateParams: [true],
-         onComplete: navInHero,
-         onCompleteParams: [false],
-         onReverseComplete: navInHero,
-         onReverseCompleteParams: [false],
       }, 0)
 
    new ScrollMagic.Scene({
@@ -172,7 +178,16 @@ document.addEventListener('DOMContentLoaded', event => {
 
    // choOyu 
 
-   const choOyuTimeline = gsap.timeline()
+   const choOyuTimeline = gsap.timeline({
+      onStart: navInHero,
+      onStartParams: [true],
+      onUpdate: navInHero,
+      onUpdateParams: [true],
+      onComplete: navInHero,
+      onCompleteParams: [false],
+      onReverseComplete: navInHero,
+      onReverseCompleteParams: [false],
+   })
 
    choOyuTimeline
       .from('.choOyu-txt', {
@@ -193,14 +208,6 @@ document.addEventListener('DOMContentLoaded', event => {
       .from('.choOyu-img-land', {
          x: -10,
          duration: 4,
-         onStart: navInHero,
-         onStartParams: [true],
-         onUpdate: navInHero,
-         onUpdateParams: [true],
-         onComplete: navInHero,
-         onCompleteParams: [false],
-         onReverseComplete: navInHero,
-         onReverseCompleteParams: [false],
       }, 0)
 
    new ScrollMagic.Scene({
@@ -211,8 +218,16 @@ document.addEventListener('DOMContentLoaded', event => {
    .setTween(choOyuTimeline)
    .setPin('.choOyu')
    .addTo(controller)
+   
+
+   // loading screen
+   window.addEventListener('load', event => {
+      const loadingDiv = document.querySelector('.loading') 
+      loadingDiv.classList.remove('active')
+   })
 
 })
+
 
 
 
