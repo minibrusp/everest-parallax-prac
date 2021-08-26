@@ -49,11 +49,6 @@ document.addEventListener('DOMContentLoaded', event => {
          scale: 1.02,
          y: 2,
          duration: 4,
-         onUpdate: function() {
-            let elem = this.targets()[0]
-
-            // console.log(elem._gsap.y);
-         }
       }, 0)
 
    new ScrollMagic.Scene({
@@ -273,82 +268,96 @@ document.addEventListener('mousemove', event => {
    let mouseX = (event.clientX / window.innerWidth) -0.5
    let mouseY = (event.clientY / window.innerWidth) -0.5
 
-   gsap.to('.header-background', {
-      x: parseFloat(mouseX * 1),
-      y: `${-mouseY * 1.5}`,
-      scale: parseFloat(`${mouseY > 0 ? 1 + (mouseY*0.02) : 1 + -(mouseY*0.02)}`),
-      ease: Power1.easeOut,
-      transformOrigin: 'center'
-   })
-   gsap.to('.header-mountain', {
-      y: `${mouseY * 1.5}`,
-      x: parseFloat(-mouseX * 1),
-      transformOrigin: 'center'
-   })
+   let headerMouseT = gsap.timeline()
+   let kanchenjungMouseT = gsap.timeline()
+   let lhotseMouseT = gsap.timeline()
+   let makaluMouseT = gsap.timeline()
+   let choOyuMouseT = gsap.timeline()
 
-   gsap.to('.kanchenjung-img-background', {
-      x: parseFloat(mouseX * 1),
-      y: `${-mouseY * 1.5}`,
-      scale: parseFloat(`${mouseY > 0 ? 1 + (mouseY*0.02) : 1 + -(mouseY*0.02)}`),
-      ease: Power1.easeOut,
-      transformOrigin: 'center'
-   })
-   gsap.to('.kanchenjung-img-mountain', {
-      y: `${mouseY * 1.5}`,
-      x: parseFloat(-mouseX * 1),
-      transformOrigin: 'center'
-   })
+   
+   headerMouseT
+      .to('.header-background', {
+         x: parseFloat(mouseX * 1),
+         y: `${-mouseY * 1.5}`,
+         scale: parseFloat(`${mouseY > 0 ? 1 + (mouseY*0.02) : 1 + -(mouseY*0.02)}`),
+         ease: Power1.easeOut,
+         transformOrigin: 'center'
+      })
+      .to('.header-mountain', {
+         y: `${mouseY * 1.5}`,
+         x: parseFloat(-mouseX * 1),
+         transformOrigin: 'center'
+      }, 0)
 
-   gsap.to('.lhotse-img-background', {
-      x: parseFloat(mouseX * 1),
-      y: `${-mouseY * 1.5}`,
-      scale: parseFloat(`${mouseY > 0 ? 1 + (mouseY*0.02) : 1 + -(mouseY*0.02)}`),
-      ease: Power1.easeOut,
-      transformOrigin: 'center'
-   })
-   gsap.to('.lhotse-img-mountain', {
-      y: `${mouseY * 1.5}`,
-      x: parseFloat(-mouseX * 1),
-      transformOrigin: 'center'
-   })
+   
 
-   gsap.to('.makalu-img-background', {
-      x: parseFloat(mouseX * 10),
-      y: `${-mouseY * 2}`,
-      scale: parseFloat(`${mouseY > 0 ? 1 + (mouseY*0.02) : 1 + -(mouseY*0.02)}`),
-      ease: Power1.easeOut,
-      transformOrigin: 'center'
-   })
-   gsap.to('.makalu-img-mountain', {
-      y: `${mouseY * 1}`,
-      x: parseFloat(-mouseX * 2),
-      transformOrigin: 'center'
-   })
-   gsap.to('.makalu-img-land', {
-      x: parseFloat(mouseX * 2.5),
-      y: `${-mouseY * 1.5}`,
-      ease: Power1.easeOut,
-      transformOrigin: 'center'
-   })
+   kanchenjungMouseT
+      .to('.kanchenjung-img-background', {
+         x: parseFloat(mouseX * 1),
+         y: `${-mouseY * 1.5}`,
+         scale: parseFloat(`${mouseY > 0 ? 1 + (mouseY*0.02) : 1 + -(mouseY*0.02)}`),
+         ease: Power1.easeOut,
+         transformOrigin: 'center'
+      })
+      .to('.kanchenjung-img-mountain', {
+         y: `${mouseY * 1.5}`,
+         x: parseFloat(-mouseX * 1),
+         transformOrigin: 'center'
+      })
 
-   gsap.to('.choOyu-img-background', {
-      x: parseFloat(mouseX * 10),
-      y: `${-mouseY * 2}`,
-      scale: parseFloat(`${mouseY > 0 ? 1 + (mouseY*0.02) : 1 + -(mouseY*0.02)}`),
-      ease: Power1.easeOut,
-      transformOrigin: 'center'
-   })
-   gsap.to('.choOyu-img-mountain', {
-      y: `${mouseY * 1}`,
-      x: parseFloat(-mouseX * 2),
-      transformOrigin: 'center'
-   })
-   gsap.to('.choOyu-img-land', {
-      x: parseFloat(mouseX * 2),
-      y: `${-mouseY * 1.5}`,
-      ease: Power1.easeOut,
-      transformOrigin: 'center'
-   })
+   lhotseMouseT
+      .to('.lhotse-img-background', {
+         x: parseFloat(mouseX * 1),
+         y: `${-mouseY * 1.5}`,
+         scale: parseFloat(`${mouseY > 0 ? 1 + (mouseY*0.02) : 1 + -(mouseY*0.02)}`),
+         ease: Power1.easeOut,
+         transformOrigin: 'center'
+      })
+      .to('.lhotse-img-mountain', {
+         y: `${mouseY * 1.5}`,
+         x: parseFloat(-mouseX * 1),
+         transformOrigin: 'center'
+      })
+
+   makaluMouseT
+      .to('.makalu-img-background', {
+         x: parseFloat(mouseX * 10),
+         y: `${-mouseY * 2}`,
+         scale: parseFloat(`${mouseY > 0 ? 1 + (mouseY*0.02) : 1 + -(mouseY*0.02)}`),
+         ease: Power1.easeOut,
+         transformOrigin: 'center'
+      })
+      .to('.makalu-img-mountain', {
+         y: `${mouseY * 1}`,
+         x: parseFloat(-mouseX * 2),
+         transformOrigin: 'center'
+      })
+      .to('.makalu-img-land', {
+         x: parseFloat(mouseX * 2.5),
+         y: `${-mouseY * 1.5}`,
+         ease: Power1.easeOut,
+         transformOrigin: 'center'
+      })
+
+   choOyuMouseT
+      .to('.choOyu-img-background', {
+         x: parseFloat(mouseX * 10),
+         y: `${-mouseY * 2}`,
+         scale: parseFloat(`${mouseY > 0 ? 1 + (mouseY*0.02) : 1 + -(mouseY*0.02)}`),
+         ease: Power1.easeOut,
+         transformOrigin: 'center'
+      })
+      .to('.choOyu-img-mountain', {
+         y: `${mouseY * 1}`,
+         x: parseFloat(-mouseX * 2),
+         transformOrigin: 'center'
+      })
+      .to('.choOyu-img-land', {
+         x: parseFloat(mouseX * 2),
+         y: `${-mouseY * 1.5}`,
+         ease: Power1.easeOut,
+         transformOrigin: 'center'
+      })
 
 })
 
