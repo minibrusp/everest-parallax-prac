@@ -4,11 +4,26 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preload" as="image" href="./assets/Background.png">
+   <link rel="preload" as="image" href="./assets/Mountain.png">
+   <link rel="preload" as="image" href="./assets/Kanchenjunga-background.png">
+   <link rel="preload" as="image" href="./assets/Kanchenjunga-mountain.png">
+   <link rel="preload" as="image" href="./assets/Lhotse-background.png">
+   <link rel="preload" as="image" href="./assets/Lhotse-mountain.png">
+   <link rel="preload" as="image" href="./assets/Lhotse-land.png">
+   <link rel="preload" as="image" href="./assets/makalu-background.png">
+   <link rel="preload" as="image" href="./assets/makalu-mountain.png">
+   <link rel="preload" as="image" href="./assets/makalu-frontal.png">
+   <link rel="preload" as="image" href="./assets/ChoOyu-background.png">
+   <link rel="preload" as="image" href="./assets/ChoOyu-mountain.png">
+   <link rel="preload" as="image" href="./assets/ChoOyu-land.png">
+   <link rel="preload" as="image" href="./assets//Mountain_Logo.svg">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
    <link rel="stylesheet" href="./css/styles.css">
-   <title>Everest</title>
+   <link rel="shortcut icon" href="./assets/Mountain_Logo.svg" type="image/x-icon">
+   <title>Mountains of Nepal</title>
 </head>
-<body>
+<body class="on-load">
    <header>
       <nav>
          <div class="nav-left">
@@ -46,6 +61,9 @@
          <div class="hero">
             <div class="header-background"></div>
             <div class="header-mountain"></div>
+            <div class="progress header-progress">
+               <span class="progress__line"></span>
+            </div>
          </div>
 
          <div class="header-text">
@@ -72,6 +90,9 @@
          <div class="kanchenjung-img">
             <div class="kanchenjung-img-background"></div>
             <div class="kanchenjung-img-mountain"></div>
+            <div class="progress kanchenjung-progress">
+               <span class="progress__line"></span>
+            </div>
          </div>
 
          <div class="kanchenjung-txt">
@@ -96,6 +117,9 @@
             <div class="lhotse-img-background"></div>
             <div class="lhotse-img-mountain"></div>
             <div class="lhotse-img-land"></div>
+            <div class="progress lhotse-progress">
+               <span class="progress__line"></span>
+            </div>
          </div>
 
          <div class="lhotse-txt">
@@ -119,6 +143,9 @@
             <div class="makalu-img-background"></div>
             <div class="makalu-img-mountain"></div>
             <div class="makalu-img-land"></div>
+            <div class="progress makalu-progress">
+               <span class="progress__line"></span>
+            </div>
          </div>
 
          <div class="makalu-txt">
@@ -142,6 +169,9 @@
             <div class="choOyu-img-background"></div>
             <div class="choOyu-img-mountain"></div>
             <div class="choOyu-img-land"></div>
+            <div class="progress choOyu-progress">
+               <span class="progress__line"></span>
+            </div>
          </div>
 
          <div class="choOyu-txt">

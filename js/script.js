@@ -24,9 +24,18 @@ document.addEventListener('DOMContentLoaded', event => {
          x: '100%',
          opacity: 0,
       })
+      .from('.progress.header-progress', {
+         scaleY: 0,
+         transformOrigin: 'top',
+      }, 0)
       .from('.header-title', {
          y: 700,
          opacity: 0,
+         scale: 0,
+      })
+      .from('.header-progress .progress__line', {
+         top: '0%',
+         duration: 4,
       })
       .fromTo('.header-mountain', {
          scale: 1,
@@ -69,6 +78,14 @@ document.addEventListener('DOMContentLoaded', event => {
          y: 400,
          opacity: 0,
       })
+      .from('.progress.kanchenjung-progress', {
+         scaleY: 0,
+         transformOrigin: 'top',
+      }, 0)
+      .from('.kanchenjung-progress .progress__line', {
+         top: '0%',
+         duration: 4,
+      })
       .from('.kanchenjung-img-background', {
          x: -5,
          duration: 3,
@@ -105,6 +122,14 @@ document.addEventListener('DOMContentLoaded', event => {
       .from('.lhotse-txt', {
          y: 400,
          opacity: 0,
+      })
+      .from('.progress.lhotse-progress', {
+         scaleY: 0,
+         transformOrigin: 'top',
+      }, 0)
+      .from('.lhotse-progress .progress__line', {
+         top: '0%',
+         duration: 4,
       })
       .from('.lhotse-img-background', {
          scale: 1.0001,
@@ -152,6 +177,14 @@ document.addEventListener('DOMContentLoaded', event => {
          rotate: -90,
          opacity: 0,
       })
+      .from('.progress.makalu-progress', {
+         scaleY: 0,
+         transformOrigin: 'top',
+      }, 0)
+      .from('.makalu-progress .progress__line', {
+         top: '0%',
+         duration: 4,
+      }, 1)
       .from('.makalu-img-background', {
          x: -20,
          duration: 4,
@@ -197,6 +230,14 @@ document.addEventListener('DOMContentLoaded', event => {
          rotate: 90,
          opacity: 0,
       })
+      .from('.progress.choOyu-progress', {
+         scaleY: 0,
+         transformOrigin: 'top',
+      }, 0)
+      .from('.choOyu-progress .progress__line', {
+         top: '0%',
+         duration: 4,
+      })
       .from('.choOyu-img-background', {
          x: 15,
          duration: 4,
@@ -219,13 +260,18 @@ document.addEventListener('DOMContentLoaded', event => {
    .setPin('.choOyu')
    .addTo(controller)
    
+})
 
-   // loading screen
-   window.addEventListener('load', event => {
-      const loadingDiv = document.querySelector('.loading') 
-      loadingDiv.classList.remove('active')
-   })
 
+
+
+// remove loading screen
+window.addEventListener('load', event => {
+   let loadingDiv = document.querySelector('.loading') 
+   let bodyLoad = document.querySelector('body.on-load')
+   loadingDiv.classList.remove('active')
+   bodyLoad.classList.remove('on-load')
+   loadingDiv.remove();
 })
 
 

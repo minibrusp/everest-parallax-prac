@@ -30,6 +30,12 @@ body {
    padding: 0;
    font-family: 'Avenir LT Std', sans-serif;
    color: var(--white);
+   /* overflow-x: hidden; */
+}
+
+body.on-load {
+   width: 100%;
+   overflow: hidden;
 }
 
 h1,
@@ -59,6 +65,20 @@ body>header {
 
 main {
    position: relative;
+}
+
+.progress {
+   height: 25%;
+   width: 2px;
+   z-index: 20;
+   position: absolute;
+   top: 37.5%;
+   right: 5vw;
+   display: flex;
+   justify-content: center;
+   opacity: 0.7;
+   background-color: black;
+   overflow: hidden;
 }
 
 /* nav */
@@ -166,6 +186,15 @@ main header {
    position: relative;
 }
 
+main header .hero {
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: block;
+   height: 100vh;
+   width: 100vw;
+}
+
 .header-background {
    background-image: url(../assets/Background.png);
    background-size: cover;
@@ -221,6 +250,15 @@ main header {
 
 .header-title p {
    font-size: 1.7rem;
+}
+
+.header-progress .progress__line {
+   background-color: white;
+   width: 100%;
+   height: 100%;
+   display: block;
+   position: absolute;
+   top: 100%;
 }
 
 /* section lorems  */
@@ -317,6 +355,15 @@ section.lorems {
    font-size: 1.7rem;
 }
 
+.kanchenjung-progress .progress__line {
+   background-color: white;
+   width: 100%;
+   height: 100%;
+   display: block;
+   position: absolute;
+   top: 100%;
+}
+
 
 /* section lhotse  */
 
@@ -393,6 +440,14 @@ section.lorems {
    font-size: 1.7rem;
 }
 
+.lhotse-progress .progress__line {
+   background-color: white;
+   width: 100%;
+   height: 100%;
+   display: block;
+   position: absolute;
+   top: 100%;
+}
 
 /* section lhotse  */
 
@@ -470,6 +525,15 @@ section.lorems {
    font-size: 1.7rem;
 }
 
+.makalu-progress .progress__line {
+   background-color: white;
+   width: 100%;
+   height: 100%;
+   display: block;
+   position: absolute;
+   top: 100%;
+}
+
 /* section choOyu */
 
 .choOyu {
@@ -544,6 +608,15 @@ section.lorems {
 
 .choOyu-txt p {
    font-size: 1.7rem;
+}
+
+.choOyu-progress .progress__line {
+   background-color: white;
+   width: 100%;
+   height: 100%;
+   display: block;
+   position: absolute;
+   top: 100%;
 }
 
 /* loading  */
